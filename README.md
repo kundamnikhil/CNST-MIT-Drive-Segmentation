@@ -40,6 +40,9 @@ video processing.
 • The tabulate library provides a way to create formatted tables in Python.
 • The warningslibrary is used to issue warnings when code is using deprecated functionality.
 This line can be commented out to ignore the warnings.
+
+
+
 Step 2: Create a model segmentation.
 • The DeepLabModel class is defined with two methods - init and run.
 • The init method is the constructor for the class, which takes a tarball_path as an
@@ -59,6 +62,9 @@ OUTPUT_TENSOR_NAME is returned as batch_seg_map.
 • If the shape ofseg_map is 2-dimensional, a new dimension is added using np.expand_dims.
 • The outputsegmentation map isthen resized back to the original image size using cv.resize.
 • The final segmentation map is returned by the method.
+
+
+
 Step3: Create a helper function to decode the images and visualize the images.
 • Created a function named create_label_colormap that returns a NumPy array containing a
 colormap for the 20 classes in the Cityscapes dataset.
@@ -72,6 +78,9 @@ in the Cityscapes dataset.
 classes in the Cityscapes dataset.
 • Defined a NumPy array named FULL_COLOR_MAP that is the result of applying the
 label_to_color_image function to the FULL_LABEL_MAP array.
+
+
+
 Step 4: Load the pre trained model
 • A pre-trained DeepLabModel for semantic segmentation from a frozen graph file.
 Specifically, it downloads a MobileNetV2 model fine-tuned on the Cityscapes and MIT
@@ -83,7 +92,7 @@ run inference on input images.
 Step 5: Run the model on sample images.
 • Here the model gives use 3 images 1 shows the input image and 2 gives us the
 segmentation map and 3 gives us segmentation overlay.
-Figure 2 Image segmentation
+
 Segmentation Map: A segmentation map is an image where every pixel is assigned a label
 indicating the object or background class to which it belongs. In semantic segmentation, the labels
 represent the semantic meaning of the objects, such as road, building, sky, etc. Segmentation maps
@@ -101,11 +110,14 @@ which can be overlaid on the original image to create the segmentation overlay.
 of the 20 pre-defined classes such as road, sidewalk, building, etc., resulting in a
 segmentation map. The overlay image shows the segmentation map overlaid on top of the
 input image, where each class is assigned a unique color for visualization purposes.
+
+
 Step 6: After training the model, we need to evaluate its performance to see how well it is
 performing on unseen data.
 For this we evaluate the model on unknown data.
+
 Evaluate on Image:
-Figure 3 Sample image evaluation
+
 • The model has been evaluated on a sample image using pixel accuracy and mean class IoU
 metrics.
 • The pixel accuracy measures the proportion of correctly predicted pixels in the
@@ -122,7 +134,7 @@ ground truth masks for the "road" class. Similarly, the IoU for the "person" cla
 which means that the model has a lower overlap between the predicted and ground truth
 masks for the "person" class compared to the "road" class.
 Evaluate on Video: Here we evaluate the model on sample video.
-Figure 4 Sample video Evaluation
+
 • For the sample image, the model achieved a pixel accuracy of 0.90720, which means
 90.72% of the pixels were classified correctly. The mean class IoU (intersection over
 union) was 0.538, which indicates how well the model was able to distinguish between the
