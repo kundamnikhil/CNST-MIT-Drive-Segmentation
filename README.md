@@ -82,6 +82,8 @@ classes in the Cityscapes dataset.
 • Defined a NumPy array named FULL_COLOR_MAP that is the result of applying the
 label_to_color_image function to the FULL_LABEL_MAP array.
 
+![Screenshot 2023-05-14 052459](https://github.com/kundamnikhil/CNST-MIT-Drive-Segmentation/assets/43941418/f61c81ae-bcf2-4175-b23a-ecb93bb183e2)
+
 
 
 Step 4: Load the pre trained model
@@ -113,6 +115,8 @@ which can be overlaid on the original image to create the segmentation overlay.
 of the 20 pre-defined classes such as road, sidewalk, building, etc., resulting in a
 segmentation map. The overlay image shows the segmentation map overlaid on top of the
 input image, where each class is assigned a unique color for visualization purposes.
+
+![2](https://github.com/kundamnikhil/CNST-MIT-Drive-Segmentation/assets/43941418/d20de038-7ea2-4c70-a75f-b8b4a2c47787)
 
 
 Step 6: After training the model, we need to evaluate its performance to see how well it is
