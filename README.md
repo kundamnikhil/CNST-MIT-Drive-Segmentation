@@ -12,6 +12,9 @@ image classification and object detection. It was introduced by Google Research 
 upon the previous versions of DeepLab by incorporating an encoder-decoder architecture, atrous
 spatial pyramid pooling, and deep supervision.
 
+![image](https://github.com/kundamnikhil/CNST-MIT-Drive-Segmentation/assets/43941418/ac9915e4-f6e8-4f63-ab33-1fea5ac9b571)
+
+
 Implementation
 Step 1: Install required libraries and load the libraries.
 • The import tensorflow statement imports the TensorFlow library, which is an open-source
